@@ -16,8 +16,8 @@
     <link rel="stylesheet" href="/static/application.css">
     <main class="send">
         <div class="container">
-            <h1>Secret Message</h1>
-            <p class="subtitle">Get your secret one-time read only message</p>
+            <h1>Echange Sécurisé</h1>
+            <p class="subtitle">Voici votre message confidentiel à consultation unique</p>
             <div class="input-field">
 
 
@@ -25,8 +25,8 @@
 
             </div>
             <div class="button">
-                <button class="btn clipboard" type="submit" data-clipboard-target="#textarea1" name="action">Copy to clipboard
-              
+                <button class="btn clipboard" type="submit" data-clipboard-target="#textarea1" name="action">Copier le Message
+
             </button>
             </div>
         </div>
@@ -43,14 +43,14 @@
                 type: "GET",
                 url: window.location.origin + "/secret?token=" + params.get('token'),
                 success: function (data) {
-                    console.log('Submission was successful.');
+                    console.log('La transmission a réussie.');
                     console.log(data);
                     showMsg(data.msg, params.get('filetoken'), params.get('filename'))
                 },
                 error: function (data) {
-                    console.log('An error occurred.');
+                    console.log('Une erreur est survenue.');
                     console.log(data);
-                    showMsg("Message was already deleted :(")
+                    showMsg("Ce Message a déjà été consulté :(")
                 },
             });
         });
